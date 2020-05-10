@@ -13,3 +13,11 @@ class RegisterView(generics.CreateAPIView):
 class FinalProjectView (generics.CreateAPIView):
     permission_classes = [AllowAny]
     serializer_class = FinalProjectSerializer
+
+    def post (self, request, *args, **kwargs):
+        serializer = self.serializer_class(data=request.data)
+
+        if serializer.is_valid():
+            return Response(serializer.validated_data)
+        else:
+            return Response(serializer.errors)

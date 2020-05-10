@@ -32,3 +32,9 @@ class FinalProjectSerializer (serializers.ModelSerializer):
             'last_name',
             'favorite_number',
         )
+
+    def validate_favorite_number (self, favorite_number):
+        if not isinstance(favorite_number, int):
+            raise serializers.ValidationError("favorite number must be a number!")
+
+        return favorite_number
