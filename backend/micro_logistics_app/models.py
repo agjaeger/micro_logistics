@@ -1,7 +1,6 @@
 # from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
 class SiteUser (models.Model):
     organization = models.CharField(max_length=255, blank=True, null=True)
     email_verified = models.BooleanField(default=False)

@@ -1,5 +1,5 @@
 <div>
-    <h1>Whats Your Name and Favourite Number?</h1>
+    <h1>Whats Your Name and HI LOW</h1>
     <div [hidden]="!this.errorMessage">
         {{errorMessage}}
     </div>
@@ -18,7 +18,7 @@
              [(ngModel)]="lastName"/>
     </div>
     <div>
-      <label for="favoriteNumber">Favourite Number:</label>
+      <label for="favoriteNumber">Guess:</label>
       <input type="number" id="favoriteNumber" name="favoriteNumber"
              required
              [(ngModel)]="favoriteNumber"/>
@@ -32,4 +32,24 @@
 
 <div *ngIf="success">
     <h1>Thanks for your submission!</h1>
+
+    <div *ngIf="favoriteNumber > realNumber">
+        <h1>Too High!</h1>
+    </div>
+
+    <div *ngIf="favoriteNumber < realNumber">
+        <h1>Too Low!</h1>
+    </div>
+
+    <div *ngIf="favoriteNumber == realNumber">
+        <h1>Perfect!!</h1>
+    </div>
 </div>
+
+<div *ngIf="success; else successIsFalse">
+    If isValid is true
+</div>
+
+<ng-template #successIsFalse>
+    If isValid is false
+</ng-template>
