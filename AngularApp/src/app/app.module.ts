@@ -12,10 +12,12 @@ import {SiteModule} from './site/site.module';
 import {UserManagementModule} from './user-management/user-management.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from './material-module';
+import { FinalProjectComponent } from './final-project/final-project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FinalProjectComponent,
   ],
   imports: [
     MaterialModule,
