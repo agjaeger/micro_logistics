@@ -1,8 +1,8 @@
-from django.contrib.auth.models import AbstractUser
+# from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-class SiteUser(AbstractUser):
+class SiteUser (models.Model):
     organization = models.CharField(max_length=255, blank=True, null=True)
     email_verified = models.BooleanField(default=False)
     provides_stock = models.BooleanField(default=False)
@@ -18,4 +18,4 @@ class SiteUser(AbstractUser):
 class FinalProjectModel (models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
-    favourite_field = models.CharField(max_length=128)
+    favorite_number = models.IntegerField(default=0)

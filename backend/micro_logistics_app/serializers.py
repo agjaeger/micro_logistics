@@ -1,8 +1,6 @@
 from rest_framework import serializers
-from rest_framework.validators import UniqueValidator
 
 from micro_logistics_app.models import *
-from micro_logistics_app.validators import *
 
 
 class NewUserSerializer(serializers.ModelSerializer):
@@ -25,20 +23,6 @@ class NewUserSerializer(serializers.ModelSerializer):
             'phone',
         )
 
-        extra_kwargs = {
-            'email': {
-                'validators': [UniqueValidator(queryset=SiteUser.objects.all())],
-            }
-        }
-
-    def create(self, validated_data):
-        new_site_user = SiteUser(**validated_data)
-
-        new_site_user.username = validated_data['email']
-        new_site_user.set_password(validated_data['password'])
-        new_site_user.save()
-
-        return new_site_user
 
 class FinalProjectSerializer (serializers.ModelSerializer):
     class Meta:
@@ -46,5 +30,5 @@ class FinalProjectSerializer (serializers.ModelSerializer):
         fields = (
             'first_name',
             'last_name',
-            'favourite_field',
+            'favorite_number',
         )
