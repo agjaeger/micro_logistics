@@ -29,7 +29,7 @@ export class FinalProjectComponent implements OnInit {
       // TODO: client-side password verification
       this.apiService.submitFinalProjectForm(this.firstName, this.lastName, this.favouriteTVShow).subscribe(
           (result) => {
-              console.log("RESULT: " + result);
+              console.log("RESULT! " + result["favourite_field"]);
           }
       );
     }
