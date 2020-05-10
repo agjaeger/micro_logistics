@@ -17,6 +17,7 @@ export class FinalProjectComponent implements OnInit {
     favoriteNumber: number;
 
     errorMessage = '';
+    success = false;
 
     constructor(
         private apiService: MicroLogisticsApiService,
@@ -27,10 +28,14 @@ export class FinalProjectComponent implements OnInit {
 
     submitForm() {
       // TODO: client-side password verification
+      this.errorMessage = "";
       this.apiService.submitFinalProjectForm(this.firstName, this.lastName, this.favoriteNumber).subscribe(
           (result) => {
               console.log("RESULT!");
               console.log(result);
+              this.success = true;
+          }, (error) => {
+              this.errorMessage = "Error Submitting Form. Please Try Again";
           }
       );
     }

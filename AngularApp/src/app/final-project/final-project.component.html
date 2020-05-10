@@ -28,3 +28,8 @@
     [disabled]="!newUserForm.form.valid">Submit</button>
   </form>
 </div>
+
+
+<div *ngIf="success">
+    <h1>Thanks for your submission!</h1>
+</div>
