@@ -1,13 +1,10 @@
 <div>
-    <h1>Fill Out This Form to Register</h1>
+    <h1>Whats Your Name and Favourite TV Show?</h1>
     <div [hidden]="!this.errorMessage">
         {{errorMessage}}
     </div>
   <form (ngSubmit)="submitForm()"
     #newUserForm="ngForm">
-    <div>
-      <h2>Your Info</h2>
-    </div>
     <div>
       <label for="firstName">First Name:</label>
       <input type="text" id="firstName" name="firstName"

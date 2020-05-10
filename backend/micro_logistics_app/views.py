@@ -12,6 +12,4 @@ class RegisterView(generics.CreateAPIView):
 
 class FinalProjectView (generics.CreateAPIView):
     permission_classes = [AllowAny]
-    serializer_class = NewUserSerializer
-
-    
+    serializer_class = FinalProjectSerializer
