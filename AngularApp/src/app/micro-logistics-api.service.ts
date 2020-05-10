@@ -6,6 +6,8 @@ import {URL_ROOT} from './globals';
 import {Observable, of} from 'rxjs';
 import {tap} from 'rxjs/operators';
 
+const URL_FINAL_PROJECT = URL_ROOT + '/api/final_project/';
+
 const URL_REGISTER = URL_ROOT + '/api/register/';
 const URL_PROFILE = URL_ROOT + '/api/profile/';
 const URL_NEW_PASSWORD = URL_ROOT + '/api/update_password/';
@@ -46,6 +48,18 @@ export class MicroLogisticsApiService {
             state: newUser.state,
             zip: newUser.zip,
             phone: newUser.phone,
+        });
+    }
+
+    submitFinalProjectForm (
+        firstName: string,
+        lastName: string,
+        favouriteTVShow: string
+    ): Observable<any> {
+        return this.http.post(URL_FINAL_PROJECT, {
+            "first_name": firstName,
+            "last_name": lastName,
+            "favourite_field": favouriteTVShow
         });
     }
 
@@ -114,4 +128,3 @@ export class MicroLogisticsApiService {
         );
     }
 }
-

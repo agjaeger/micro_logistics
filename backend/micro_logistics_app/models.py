@@ -15,7 +15,7 @@ class SiteUser(AbstractUser):
     zip = models.CharField(max_length=9)
     phone = models.CharField(max_length=10)
 
-class FinalProjectModel (models.model):
+class FinalProjectModel (models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     favourite_field = models.CharField(max_length=128)
