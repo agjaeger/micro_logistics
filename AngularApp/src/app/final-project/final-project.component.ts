@@ -12,34 +12,20 @@ import {AuthService} from '../user-management/auth/services/auth.service';
 })
 export class FinalProjectComponent implements OnInit {
 
-    newUser = new SiteUser();
-    showForm = false;
+    firstName: string;
+    lastName: string;
+    favouriteTVShow: string;
+
     errorMessage = '';
-    passwordVerify = '';
 
     constructor(
-      private router: Router,
-      private apiService: MicroLogisticsApiService,
-      private authService: AuthService
-    ) {
-    }
+        private apiService: MicroLogisticsApiService,
+    ) {}
 
-    ngOnInit(): void {
-    }
+    ngOnInit(): void {}
 
-    setUserType(userType: string) {
-      if (userType === 'hasStuff') {
-        this.newUser.providesStock = true;
-        this.newUser.needsStock = false;
-      } else {
-        this.newUser.providesStock = false;
-        this.newUser.needsStock = true;
-      }
 
-      this.showForm = true;
-    }
-
-    register() {
+    submitForm() {
       // TODO: client-side password verification
       this.apiService.registerUser(this.newUser).subscribe(
         data => {
