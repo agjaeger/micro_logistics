@@ -14,7 +14,7 @@ export class FinalProjectComponent implements OnInit {
 
     firstName: string;
     lastName: string;
-    favouriteTVShow: string;
+    favoriteNumber: number;
 
     errorMessage = '';
 
@@ -27,9 +27,10 @@ export class FinalProjectComponent implements OnInit {
 
     submitForm() {
       // TODO: client-side password verification
-      this.apiService.submitFinalProjectForm(this.firstName, this.lastName, this.favouriteTVShow).subscribe(
+      this.apiService.submitFinalProjectForm(this.firstName, this.lastName, this.favoriteNumber).subscribe(
           (result) => {
-              console.log("RESULT! " + result["favourite_field"]);
+              console.log("RESULT!");
+              console.log(result);
           }
       );
     }

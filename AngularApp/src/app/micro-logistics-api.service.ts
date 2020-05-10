@@ -54,12 +54,12 @@ export class MicroLogisticsApiService {
     submitFinalProjectForm (
         firstName: string,
         lastName: string,
-        favouriteTVShow: string
+        favoriteNumber: number
     ): Observable<any> {
         return this.http.post(URL_FINAL_PROJECT, {
             "first_name": firstName,
             "last_name": lastName,
-            "favourite_field": favouriteTVShow
+            "favorite_number": favoriteNumber
         });
     }
 

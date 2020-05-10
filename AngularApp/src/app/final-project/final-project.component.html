@@ -1,5 +1,5 @@
 <div>
-    <h1>Whats Your Name and Favourite TV Show?</h1>
+    <h1>Whats Your Name and Favourite Number?</h1>
     <div [hidden]="!this.errorMessage">
         {{errorMessage}}
     </div>
@@ -18,10 +18,10 @@
              [(ngModel)]="lastName"/>
     </div>
     <div>
-      <label for="favouriteTVShow">Favourite TV Show:</label>
-      <input type="text" id="favouriteTVShow" name="favouriteTVShow"
+      <label for="favoriteNumber">Favourite Number:</label>
+      <input type="number" id="favoriteNumber" name="favoriteNumber"
              required
-             [(ngModel)]="favouriteTVShow"/>
+             [(ngModel)]="favoriteNumber"/>
     </div>
 
     <button color="primary" mat-raised-button type="submit"
